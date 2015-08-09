@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
   def index
     @bookings = Booking.all
+    @rooms = Room.where(user_id: current_user)
   end
 
   def new
