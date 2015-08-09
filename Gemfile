@@ -51,3 +51,6 @@ gem 'devise'
 # --------
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
+# paperclip
+gem 'paperclip'
