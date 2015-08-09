@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     Booking.create(user_id: current_user.id, room_id: params[:room_id])
+    redirect_to rooms_path
   end
 
   def create
