@@ -1,2 +1,27 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<%= form_for @room do |room| %>
+
+<div class="">
+	<%= room.label :amount, "最大人数" %>
+	<%= room.text_field :amount %>
+</div>
+
+<div class="">
+	<%= room.label :price, "価格" %>
+	<%= room.text_field :price %>
+</div>
+
+<div class="">
+	<%= room.label :message, "一言" %>
+	<%= room.text_field :message %>
+</div>
+
+<div class="">
+	<%= room.label :address, "住所" %>
+	<%= room.text_field :address %>
+</div>
+
+<div class="">
+	<%= room.submit "登録する" %>
+</div>
+
+<% end %>
