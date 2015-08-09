@@ -1,7 +1,24 @@
 <h2 class="room-title">お部屋の名前</h2>
-<img src="" alt="" width="300" height="200">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius culpa architecto commodi totam velit quam, in ratione, facere quae, asperiores amet alias. Perferendis deleniti impedit amet nulla excepturi aliquid unde.</p>
-<p>4 / 5</p>
-<button type="button" class="btn btn-primary btn-md">
-	参加
-</button>
+<div class="image-box-show">
+	<img src="" alt="" width="300" height="200">
+</div>
+<div class="room-description">
+	<p>お部屋の説明です。お部屋の説明です。お部屋の説明です。お部屋の説明です。</p>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="row">
+			<div class="col-xs-1">
+				<%= image_tag 'person.png', size: '30x30' %>
+			</div>
+			<div class="col-xs-3">
+				<div class="amount-show">
+					<p>4 / 5</p>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-primary btn-md pull-right">
+			参加
+		</button>
+	</div>
+</div>
