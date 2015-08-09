@@ -4,46 +4,8 @@ Rails.application.routes.draw do
   get 'top/index'
 
   root to: "top#index"
-
-  get 'bookings/index'
-
-  get 'bookings/new'
-
-  get 'bookings/create'
-
-  get 'bookings/edit'
-
-  get 'bookings/update'
-
-  get 'bookings/destroy'
-
-  get 'rooms/index'
-
-  get 'rooms/show'
-
-  get 'rooms/new'
-
-  get 'rooms/create'
-
-  get 'rooms/edit'
-
-  get 'rooms/update'
-
-  get 'rooms/destroy'
-
-  get 'room/index'
-
-  get 'room/show'
-
-  get 'room/new'
-
-  get 'room/create'
-
-  get 'room/edit'
-
-  get 'room/update'
-
-  get 'room/destroy'
+  resources :bookings
+  resources :rooms
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
