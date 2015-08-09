@@ -1,3 +1,35 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.room-info-panel {
+	width: 100%;
+	height: 300px;
+	background: #BBDEFB;
+	padding: 5px 10px;
+
+	p {
+		font-size: 18px;
+	}
+}
+
+.room-info-show {
+	width: 100%;
+	height: 500px;
+	border: 1px solid;
+}
+
+.room-title {
+	color: #0D47A1;
+	border-left: 10px solid #0D47A1;
+	padding-left: 10px;
+}
+
+.image-box {
+	float: left;
+}
+
+.description {
+	width: 40%;
+	float: right;
+}
