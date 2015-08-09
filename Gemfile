@@ -43,3 +43,11 @@ group :development, :test do
   gem 'spring'
 end
 
+# devise
+gem 'devise'
+
+# --------
+# BootStrap
+# --------
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
