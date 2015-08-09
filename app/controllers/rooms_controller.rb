@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @user = User.find(@room.user_id)
   end
 
   def new
@@ -19,6 +20,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.user_id = current_user.id
     if @room.save
       session[:room] = @room.id
       redirect_to @room, notice: "予約が完了しました。"

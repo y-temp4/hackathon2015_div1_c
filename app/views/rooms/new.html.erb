@@ -1,27 +1,37 @@
+<h2>参加者を募集する</h2>
 <%= form_for @room do |room| %>
+<div class="">
+	<%= room.label :title, "タイトル" %>
+	<%= room.text_field :title %>
+	<em>募集内容の見出しをつけてください</em>
+</div>
 
 <div class="">
 	<%= room.label :amount, "最大人数" %>
-	<%= room.text_field :amount %>
+  <%= room.number_field :amount, :value => 0, step: 1 %>
+	<em>募集する最大人数を入力してください</em>
 </div>
 
 <div class="">
 	<%= room.label :price, "価格" %>
-	<%= room.text_field :price %>
+	<%= room.number_field :price, :value => 0, step: 100 %>
+	<em>室料の設定が可能です</em>
 </div>
 
 <div class="">
-	<%= room.label :message, "一言" %>
+	<%= room.label :message, "詳細内容" %>
 	<%= room.text_field :message %>
+	<em>募集の内容を具体的に記入してください</em>
 </div>
 
 <div class="">
 	<%= room.label :address, "住所" %>
 	<%= room.text_field :address %>
+	<em>部屋の住所を入力してください</em>
 </div>
 
 <div class="field">
-  <%= room.label :filename %><br>
+  <%= room.label :filename, "写真" %><br>
   <%= room.file_field :image %>
 </div>
 
