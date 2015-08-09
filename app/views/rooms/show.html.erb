@@ -1,7 +1,26 @@
-<h2 class="room-title">お部屋の名前</h2>
-<img src="" alt="" width="300" height="200">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius culpa architecto commodi totam velit quam, in ratione, facere quae, asperiores amet alias. Perferendis deleniti impedit amet nulla excepturi aliquid unde.</p>
-<p>4 / 5</p>
+<h2 class="room-title"><%= @room.title %></h2>
+<table class="table">
+	<tr>
+		<th>部屋ID</th>
+		<td><%= @room.id %></td>
+	</tr>
+	<tr>
+		<th>価格</th>
+		<td><%= @room.price %></td>
+	</tr>
+	<tr>
+		<th>詳細</th>
+		<td><%= @room.message %></td>
+	</tr>
+	<tr>
+		<th>募集人数</th>
+		<td><%= @room.amount %></td>
+	</tr>
+	<tr>
+		<th>住所</th>
+		<td><%= @room.address %></td>
+	</tr>
+</table>
 <button type="button" class="btn btn-primary btn-md">
 	参加
 </button>
