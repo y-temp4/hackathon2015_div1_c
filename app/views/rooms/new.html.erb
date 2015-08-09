@@ -20,11 +20,14 @@
 	<%= room.label :address, "住所" %>
 	<%= room.text_field :address %>
 </div>
+	<%= room.label :title, "部屋名" %>
+	<%= room.text_field :title %>
 
 <div class="field">
   <%= room.label :filename %><br>
   <%= room.file_field :image %>
 </div>
+
 
 <div class="">
 	<%= room.submit "登録する" %>
