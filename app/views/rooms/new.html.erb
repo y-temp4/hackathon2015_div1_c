@@ -1,36 +1,39 @@
+<h2>部屋情報の登録</h2>
 <%= form_for @room do |room| %>
 <%= hidden_field_tag "room[user_id]", current_user %>
 
-<div class="">
-	<%= room.label :amount, "最大人数" %>
-	<%= room.text_field :amount %>
-</div>
-
-<div class="">
-	<%= room.label :price, "価格" %>
-	<%= room.text_field :price %>
-</div>
-
-<div class="">
-	<%= room.label :message, "一言" %>
-	<%= room.text_field :message %>
-</div>
-
-<div class="">
-	<%= room.label :address, "住所" %>
-	<%= room.text_field :address %>
-</div>
-
-<div class="field">
-  <%= room.label :filename %><br>
-  <%= room.file_field :image %>
-</div>
-
+<div class="form-group">
 	<%= room.label :title, "部屋名" %>
-	<%= room.text_field :title %>
+	<%= room.text_field :title, class: 'form-control' %>
+</div>
 
-<div class="">
-	<%= room.submit "登録する" %>
+<div class="form-group">
+	<%= room.label :amount, "最大人数" %>
+	<%= room.text_field :amount, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= room.label :price, "価格" %>
+	<%= room.text_field :price, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= room.label :message, "一言" %>
+	<%= room.text_field :message, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= room.label :address, "住所" %>
+	<%= room.text_field :address, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= room.label :filename, "部屋の画像" %><br>
+  <%= room.file_field :image%>
+</div>
+
+<div class="actions">
+	<%= room.submit "登録する", class: 'btn btn-primary' %>
 </div>
 
 <% end %>
