@@ -1,3 +1,4 @@
+<%= debug @rooms %>
 <div class="row booking-title-header">
 	<div class="col-lg-6">
 		<h2 class="booking-title">募集中の部屋</h2>
@@ -5,12 +6,18 @@
 </div>
 
 <div class="row">
+	<% if @rooms.blank? %>
+		naidesu
+	<% else %>
 	<div class="col-lg-6">
 		<div class="booking-panel">
-			<h3><a href="">お部屋の名前</a></h3>
+		<% @rooms.each do |room| %>
+			<h3><%= link_to room.title, edit_booking_path(current_user) %></h3>
+		<% end %>
 			<div class="amount-data">
 				4人
 			</div>
 		</div>
 	</div>
+	<% end %>
 </div>
