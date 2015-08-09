@@ -6,7 +6,7 @@
 	width: 100%;
 	height: 300px;
 	background: #BBDEFB;
-	padding: 5px 10px;
+	padding: 0 10px 5px;
 
 	p {
 		font-size: 18px;
@@ -20,9 +20,12 @@
 }
 
 .room-title {
-	color: #0D47A1;
-	border-left: 10px solid #0D47A1;
-	padding-left: 10px;
+	background: #0D47A1;
+	color: white;
+	// color: #0D47A1;
+	// border-left: 10px solid #0D47A1;
+	margin: 0 -10px 10px;
+	padding: 10px;
 }
 
 .image-box {
