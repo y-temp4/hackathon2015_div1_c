@@ -1,2 +1,27 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<div class="to_center">
+	<h2 class="booking-title">申請一覧</h2>
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false">
+	          ◯◯さん
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+	      <div class="panel-body">
+	        <button type="button" class="btn btn-danger pull-right">✕</button>
+	        <button type="button" class="btn btn-primary pull-right booking-check-btn">✓</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<h2 class="booking-title">参加者一覧</h2>
+	<div class="booking-user-list">
+		<ul>
+			<li>まるまるさん</li>
+			<li>ばつばつさん</li>
+		</ul>
+	</div>
+</div>
