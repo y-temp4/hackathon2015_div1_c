@@ -7,7 +7,11 @@
 
 <div class="row">
 	<% if @rooms.blank? %>
-		naidesu
+		<div class="container">
+			<div class="alert alert-info">
+				提供している部屋は現在ありません。
+			</div>
+		</div>
 	<% else %>
 	<div class="col-lg-6">
 		<div class="booking-panel">
