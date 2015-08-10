@@ -48,7 +48,7 @@ class RoomsController < ApplicationController
 
   def pending
     @pending_rooms=[]
-    Booking.where(:user_id => current_user, :approval => false).each do |booking|
+    Booking.where(:user_id => current_user, :approval => nil).each do |booking|
       @pending_rooms << Room.find(booking.room_id)
     end
   end
