@@ -3,6 +3,14 @@
     あなたの部屋にスキマ時間はありませんか？<br>
     あなたの部屋を使いたい誰かがいます！あなたの部屋を貸してあげましょう。
 </p>
-<% if current_user %>
-<%= current_user.email %>
+
+<h3>使い方</h3>
+<ul class="list-group">
+    <li class="list-group-item">1. 右上の<button class="btn btn-sm btn-default">募集する</button>リンクから、人を呼びたい部屋を登録します。</li>
+    <li class="list-group-item">2. 募集したい人数と室料を設定できます。</li>
+    <li class="list-group-item">3. 登録後は、参加者を待ちます。</li>
+    <li class="list-group-item">4. 他のユーザーから申請が届いたら、申請の許可や拒否を行います。</li>
+</ul>
+<%= link_to :rooms do %>
+<button type="button" name="button" class="btn btn-default btn-lg">部屋を探す</button>
 <% end %>
