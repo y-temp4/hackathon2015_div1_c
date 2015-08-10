@@ -1,4 +1,3 @@
-<%= debug @applicant %>
 <div class="to_center">
 	<h2 class="booking-title">申請一覧</h2>
 	<% @applicant.each do |applicant| %>
@@ -29,9 +28,18 @@
 
 	<h2 class="booking-title">参加者一覧</h2>
 	<div class="booking-user-list">
-		<ul>
+		<ul class="list-group">
 			<% @approved.each do |approved| %>
-				<li><%= approved.email %></li>
+				<li class="list-group-item"><%= approved.email %></li>
+			<% end %>
+		</ul>
+	</div>
+
+	<h2 class="booking-title">非承認一覧</h2>
+	<div class="booking-user-list">
+		<ul class="list-group">
+			<% @disapproved.each do |da| %>
+				<li class="list-group-item"><%= da.email %></li>
 			<% end %>
 		</ul>
 	</div>
