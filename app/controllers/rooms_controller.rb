@@ -38,6 +38,24 @@ class RoomsController < ApplicationController
 
   def destroy
   end
+
+  def checked
+    @checked_rooms=[]
+    Booking.where(:user_id => current_user, :approval => true).each do |booking|
+      @checked_rooms << Room.find(booking.room_id)
+    end
+    #@checked_rooms = Room.includes(:bookings).where( booking: { user_id: current_user.id, approval: true } )
+    # @checked_rooms = Booking.where(user_id: current_user.id, approval: true)
+    # @checked_rooms = Booking.all
+  end
+
+  def pending
+    @pending_rooms=[]
+    Booking.where(:user_id => current_user, :approval => false).each do |booking|
+      @pending_rooms << Room.find(booking.room_id)
+    end
+  end
+
   private
   def room_params
     params.require(:room).permit( :amount, :price ,:message , :address)

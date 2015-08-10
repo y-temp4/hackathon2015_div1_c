@@ -17,37 +17,22 @@
 	<h2>部屋一覧</h2>
 </div>
 <div class="row">
-	<% @rooms.each do |room| %>
 	<div class="col-lg-6">
+		<% @pending_rooms.each do |room| %>
 		<div class="room-info-panel">
 			<h2 class="room-title"><%= link_to room.title, room %></h2>
 			<div class="image-box">
 				<img src="" alt="" width="170" height="200">
 			</div>
 			<div class="description">
-                <p>オーナー: <br>
-                    <% if room.user_id %>
-                        <%= room.get_user_email(room.user_id) %>
-                    <% else %>
-                        <%= "-" %>
-                    <% end %>
-                </p>
-				<p>詳細内容: <br>
-                    <%= room.message %>
-                </p>
-				<p>募集人数: <br>
-                    <%= room.amount %>
-                </p>
-				<p>住所: <br>
-                    <%= room.address %>
-                </p>
-                <%= link_to :new_booking do %>
+				<p><%= room.message %></p>
+				<p><%= room.amount %></p>
+				<p><%= room.address %></p>
 				<button type="button" class="btn btn-primary btn-sm">
 					参加
 				</button>
-                <% end %>
 			</div>
 		</div>
+		<% end %>
 	</div>
-	<% end %>
 </div>

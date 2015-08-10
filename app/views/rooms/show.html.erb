@@ -6,7 +6,11 @@
 	</tr>
 	<tr>
 		<th>オーナー</th>
+		<% if @user %>
 		<td><%= @user.email %></td>
+		<% else %>
+		<td><%= "-" %></td>
+		<% end %>
 	</tr>
 	<tr>
 		<th>価格</th>
@@ -25,6 +29,7 @@
 		<td><%= @room.address %></td>
 	</tr>
 </table>
-<button type="button" class="btn btn-primary btn-md">
-	参加
-</button>
+
+<%= link_to '参加', new_booking_path(room_id: @room.id), data: {confirm: "本当に参加しますか？"}, class: 'btn btn-primary' %>
+
+<%= debug @room %>

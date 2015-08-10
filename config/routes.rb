@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: "top#index"
   resources :bookings
+  get "rooms/checked", :to => 'rooms#checked'
+  get "rooms/pending", :to => 'rooms#pending'
   resources :rooms
 
   # The priority is based upon order of creation: first created -> highest priority.

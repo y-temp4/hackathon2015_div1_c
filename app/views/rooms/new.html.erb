@@ -5,6 +5,7 @@
 	<%= room.text_field :title %>
 	<em>募集内容の見出しをつけてください</em>
 </div>
+<%= hidden_field_tag "room[user_id]", current_user %>
 
 <div class="">
 	<%= room.label :amount, "最大人数" %>
