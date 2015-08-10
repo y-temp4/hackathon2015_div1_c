@@ -1,15 +1,11 @@
 <h2>参加者を募集する</h2>
 <%= form_for @room do |room| %>
-<div class="">
-	<%= room.label :title, "タイトル" %>
-	<%= room.text_field :title %>
-	<em>募集内容の見出しをつけてください</em>
-</div>
 <%= hidden_field_tag "room[user_id]", current_user %>
 
 <div class="form-group">
-	<%= room.label :title, "部屋名" %>
+	<%= room.label :title, "タイトル" %>
 	<%= room.text_field :title, class: 'form-control' %>
+	<em>募集内容の見出しをつけてください</em>
 </div>
 
 <div class="form-group">
@@ -28,7 +24,6 @@
 	<%= room.label :message, "詳細内容" %>
 	<%= room.text_field :message, class: 'form-control' %>
 	<em>募集の内容を具体的に記入してください</em>
-	<%= room.text_field :price, class: 'form-control' %>
 </div>
 
 <div class="form-group">
