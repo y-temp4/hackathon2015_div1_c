@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.order(:id)
+    @rooms = Room.order(:id).where.not(user_id: current_user.id)
   end
 
   def show
