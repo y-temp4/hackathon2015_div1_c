@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+    before_action :authenticate_user!
   def index
     @rooms = Room.order(:id).where.not(user_id: current_user.id)
   end
