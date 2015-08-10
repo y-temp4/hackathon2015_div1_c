@@ -1,6 +1,6 @@
 <h2>部屋情報の登録</h2>
 <%= form_for @room do |room| %>
-<%= hidden_field_tag "room[user_id]", current_user %>
+<%= hidden_field_tag "room[user_id]", current_user.id %>
 
 <div class="form-group">
 	<%= room.label :title, "部屋名" %>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'top/index'
 
   root to: "top#index"
+  get "bookings/auth/:id", :to => 'bookings#auth', :as => 'auth_booking'
+  get "bookings/update_user", :to => 'bookings#update_user', :as => 'update_user_booking'
   resources :bookings
   get "rooms/checked", :to => 'rooms#checked'
   get "rooms/pending", :to => 'rooms#pending'
