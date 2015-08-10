@@ -1,4 +1,8 @@
-<h2>新規登録</h2>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="panel-title">新規登録</div>
+  </div>
+     <div class="panel-body">
 <div class="form-signin">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -28,8 +32,9 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "登録", class: 'btn btn-default' %>
+      <%= f.submit "登録", class: 'btn btn-info' %>
     </div>
   <% end %>
-
+</div>
+</div>
 </div>
