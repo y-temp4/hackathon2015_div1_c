@@ -4,13 +4,10 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
   def index
     @bookings = Booking.all
-    @rooms = Room.where(user_id: current_user)
   end
 
   def new
     @booking = Booking.new
-    Booking.create(user_id: current_user.id, room_id: params[:room_id])
-    redirect_to rooms_path
   end
 
   def create

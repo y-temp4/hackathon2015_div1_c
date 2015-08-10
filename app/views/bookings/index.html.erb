@@ -1,27 +1,18 @@
-<%#= debug @rooms %>
 <div class="row booking-title-header">
 	<div class="col-lg-6">
 		<h2 class="booking-title">募集中の部屋</h2>
 	</div>
 </div>
 
-<% if @rooms.blank? %>
-	<div class="row">
-		<div class="container">
-			<div class="alert alert-info">
-				提供している部屋は現在ありません。
-			</div>
-		</div>
-	</div>
-<% else %>
-	<div class="row">
-		<% @rooms.each do |room| %>
-			<div class="col-lg-6">
-				<div class="booking-panel">
-					<h3><%= link_to room.title, auth_booking_path(room.id) %></h3>
-				</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="booking-panel">
+			<h3><a href="">お部屋の名前</a></h3>
+			<div class="amount-data">
+				4人
 			</div>
 		<% end %>
 		</div>
 	</div>
-<% end %>
+</div>

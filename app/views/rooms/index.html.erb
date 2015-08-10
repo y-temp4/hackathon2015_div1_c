@@ -25,12 +25,27 @@
 				<img src="" alt="" width="170" height="200">
 			</div>
 			<div class="description">
-				<p><%= room.message %></p>
-				<p><%= room.amount %></p>
-				<p><%= room.address %></p>
+                <p>オーナー: <br>
+                    <% if room.user_id %>
+                        <%= room.get_user_email(room.user_id) %>
+                    <% else %>
+                        <%= "-" %>
+                    <% end %>
+                </p>
+				<p>詳細内容: <br>
+                    <%= room.message %>
+                </p>
+				<p>募集人数: <br>
+                    <%= room.amount %>
+                </p>
+				<p>住所: <br>
+                    <%= room.address %>
+                </p>
+                <%= link_to :new_booking do %>
 				<button type="button" class="btn btn-primary btn-sm">
 					参加
 				</button>
+                <% end %>
 			</div>
 		</div>
 	</div>
