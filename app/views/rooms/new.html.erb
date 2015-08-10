@@ -33,6 +33,12 @@
 </div>
 
 <div class="form-group">
+	<%= room.label :date, "日付" %>
+	<%= room.datetime_select :date, :use_month_numbers => true, class: 'form-control' %>
+	<em>部屋に来てほしい日付を入力してください</em>
+</div>
+
+<div class="form-group">
   <%= room.label :filename, "部屋の画像" %><br>
   <%= room.file_field :image %>
 </div>
