@@ -3,14 +3,14 @@
     <div class="container-fluid">
 
     <div class="navbar-header">
-       <ul class="nav navbar-nav nav-justified" id="NavbarContent">
-				<li><a href="">Top</a></li>
-				<li><a href="">最新</a></li>
-				<li><%= link_to '参加済', rooms_checked_path %></li>
-				<li><%= link_to '申請中', rooms_pending_path %></li>
-		   </ul>
+        <ul class="nav navbar-nav nav-justified" id="NavbarContent">
+                 <li><%= link_to 'TOP', :root %></li>
+                 <li><%= link_to '最新', :rooms %></li>
+                 <li><%= link_to '参加済', :rooms_checked %></li>
+                 <li><%= link_to '申請中', :rooms_pending %></li>
+        </ul>
 		</div>
-		</div>
+	</div>
   </div>
 </nav>
 <div class="title-box">
