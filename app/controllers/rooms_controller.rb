@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
     before_action :authenticate_user!
   def index
-    @rooms = Room.order(:id).where.not(user_id: current_user.id)
+    @rooms = Room.order("id DESC").where.not(user_id: current_user.id)
   end
 
   def show
@@ -42,14 +42,14 @@ class RoomsController < ApplicationController
 
   def checked
     @checked_rooms=[]
-    Booking.where(:user_id => current_user, :approval => true).each do |booking|
+    Booking.where(:user_id => current_user.id, :approval => true).each do |booking|
       @checked_rooms << Room.find(booking.room_id)
     end
   end
 
   def pending
     @pending_rooms=[]
-    Booking.where(:user_id => current_user, :approval => false).each do |booking|
+    Booking.where(:user_id => current_user.id, :approval => nil).each do |booking|
       @pending_rooms << Room.find(booking.room_id)
     end
   end
