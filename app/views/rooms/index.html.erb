@@ -4,27 +4,27 @@
 
     <div class="navbar-header">
        <ul class="nav navbar-nav nav-justified" id="NavbarContent">
-				<li><a href="">Top</a></li>
-				<li><a href="">最新</a></li>
-				<li><%= link_to '参加済', rooms_checked_path %></li>
-				<li><%= link_to '申請中', rooms_pending_path %></li>
-		   </ul>
-		</div>
-		</div>
+                <li><a href="">Top</a></li>
+                <li><%= link_to '最新', :rooms %></li>
+                <li><%= link_to '参加済', :rooms_checked %></li>
+                <li><%= link_to '申請中', :rooms_pending %></li>
+       </ul>
+    </div>
+    </div>
   </div>
 </nav>
 <div class="title-box">
-	<h2>部屋一覧</h2>
+    <h2>部屋一覧</h2>
 </div>
 <div class="row">
-	<% @rooms.each do |room| %>
-	<div class="col-lg-6">
-		<div class="room-info-panel">
-			<h2 class="room-title"><%= link_to room.title, room %></h2>
-			<div class="image-box">
-				<img src="" alt="" width="170" height="200">
-			</div>
-			<div class="description">
+    <% @rooms.each do |room| %>
+    <div class="col-lg-6">
+        <div class="room-info-panel">
+            <h2 class="room-title"><%= link_to room.title, room %></h2>
+            <div class="image-box">
+                <img src="" alt="" width="170" height="200">
+            </div>
+            <div class="description">
                 <p>オーナー: <br>
                     <% if room.user_id %>
                         <%= room.get_user_email(room.user_id) %>
@@ -32,22 +32,22 @@
                         <%= "-" %>
                     <% end %>
                 </p>
-				<p>詳細内容: <br>
+                <p>詳細内容: <br>
                     <%= room.message %>
                 </p>
-				<p>募集人数: <br>
+                <p>募集人数: <br>
                     <%= room.amount %>
                 </p>
-				<p>住所: <br>
+                <p>住所: <br>
                     <%= room.address %>
                 </p>
                 <%= link_to :new_booking do %>
-				<button type="button" class="btn btn-primary btn-sm">
-					参加
-				</button>
+                <button type="button" class="btn btn-primary btn-sm">
+                    参加
+                </button>
                 <% end %>
-			</div>
-		</div>
-	</div>
-	<% end %>
+            </div>
+        </div>
+    </div>
+    <% end %>
 </div>
