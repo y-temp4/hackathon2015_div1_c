@@ -3,7 +3,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @bookings = Booking.all
+    @rooms = Room.order(:id).where(user_id: current_user.id)
   end
 
   def new
@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
 
   def auth
     @applicant=[]
-    Booking.where(:room_id => params[:id]).each do |booking|
+    Booking.where(:room_id => params[:id], :approval => nil).each do |booking|
       @applicant << User.find(booking.user_id)
     end
 
@@ -32,18 +32,25 @@ class BookingsController < ApplicationController
     Booking.where(:room_id => params[:id], :approval => true).each do |booking|
       @approved << User.find(booking.user_id)
     end
+
+    @disapproved=[]
+    Booking.where(:room_id => params[:id], :approval => false).each do |booking|
+      @disapproved << User.find(booking.user_id)
+    end
   end
 
   def update_user
-    if params[:check_id] == 0
-      Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
+    if params[:check_id] == '0'
+      b = Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
              .first
-             .update_attribute(:approval, false)
+      b.approval = false
+      b.save
       redirect_to auth_booking_path(params[:room_id])
     else
-      Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
+      b = Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
              .first
-             .update_attribute(:approval, true)
+      b.approval = true
+      b.save
       redirect_to auth_booking_path(params[:room_id])
     end
   end
