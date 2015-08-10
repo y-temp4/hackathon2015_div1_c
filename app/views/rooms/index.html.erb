@@ -17,7 +17,7 @@
     <h2>部屋一覧</h2>
 </div>
 <div class="row">
-    <% @rooms.each do |room| %>
+  <% @rooms.each do |room| %>
     <div class="col-lg-6">
         <div class="room-info-panel">
             <h2 class="room-title"><%= link_to room.title, room %></h2>
@@ -38,6 +38,9 @@
                 <p>募集人数: <br>
                     <%= room.amount %>
                 </p>
+                <p>日付: <br>
+                    <%= room.date.strftime('%Y / %m / %d') %>
+                </p>
                 <p>住所: <br>
                     <%= room.address %>
                 </p>
@@ -47,5 +50,5 @@
             <div class="clear"></div>
         </div>
     </div>
-    <% end %>
+  <% end %>
 </div>

@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 20150810023927) do
     t.integer  "price"
     t.string   "message"
     t.string   "address"
-    t.string   "filename"
-    t.binary   "image"
     t.string   "title"
     t.datetime "date"
   end
