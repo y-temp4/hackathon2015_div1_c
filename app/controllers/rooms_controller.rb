@@ -58,6 +58,6 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit( :amount, :price ,:message , :address, :title, :image)
+    params.require(:room).permit( :amount, :price ,:message , :address, :title, :image, :user_id)
   end
 end

@@ -20,6 +20,32 @@ class BookingsController < ApplicationController
     end
   end
 
+  def auth
+    @applicant=[]
+    Booking.where(:room_id => params[:id]).each do |booking|
+      @applicant << User.find(booking.user_id)
+    end
+
+    @approved=[]
+    Booking.where(:room_id => params[:id], :approval => true).each do |booking|
+      @approved << User.find(booking.user_id)
+    end
+  end
+
+  def update_user
+    if params[:check_id] == 0
+      Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
+             .first
+             .update_attribute(:approval, true)
+      redirect_to auth_booking_path(params[:room_id])
+    else
+      Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
+             .first
+             .update_attribute(:approval, true)
+      redirect_to auth_booking_path(params[:room_id])
+    end
+  end
+
   def edit
   end
 

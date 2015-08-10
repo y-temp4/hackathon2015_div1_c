@@ -1,0 +1,41 @@
+<%= debug @applicant %>
+<div class="to_center">
+	<h2 class="booking-title">申請一覧</h2>
+	<% @applicant.each do |applicant| %>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab">
+		      <h4 class="panel-title">
+		        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false">
+		          <%= applicant.email %>
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+		      <div class="panel-body">
+						<%= link_to '✕', update_user_booking_path(check_id: 0, user_id: applicant.id, room_id: params[:id]),
+						                    data: {confirm: "本当に非承認にしますか？"},
+						                    class: 'btn btn-danger pull-right' %>
+
+						<%= link_to '✓', update_user_booking_path(check_id: 1, user_id: applicant.id, room_id: params[:id]),
+						                    data: {confirm: "本当に承認にしますか？"},
+						                    class: 'btn btn-primary pull-right booking-check-btn' %>
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	<% end %>
+
+<%#= link_to '参加', new_booking_path(room_id: @room.id), data: {confirm: "本当に参加しますか？"}, class: 'btn btn-primary' %>
+
+
+	<h2 class="booking-title">参加者一覧</h2>
+	<div class="booking-user-list">
+		<ul>
+			<% @approved.each do |approved| %>
+				<li><%= approved.email %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
