@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
     if params[:check_id] == 0
       Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
              .first
-             .update_attribute(:approval, true)
+             .update_attribute(:approval, false)
       redirect_to auth_booking_path(params[:room_id])
     else
       Booking.where(:user_id => params[:user_id], :room_id => params[:room_id])
