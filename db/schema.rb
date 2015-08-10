@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809155937) do
+ActiveRecord::Schema.define(version: 20150810023927) do
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150809155937) do
     t.string   "filename"
     t.binary   "image"
     t.string   "title"
+    t.datetime "date"
   end
 
   add_index "rooms", ["user_id"], name: "index_rooms_on_user_id"

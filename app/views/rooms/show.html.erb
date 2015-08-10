@@ -28,6 +28,10 @@
 		<th>住所</th>
 		<td><%= @room.address %></td>
 	</tr>
+	<tr>
+		<th>来て欲しい日付</th>
+		<td><%= @room.date.strftime('%Y / %m / %d') %></td>
+	</tr>
 </table>
 
 <%= link_to '参加', new_booking_path(room_id: @room.id), data: {confirm: "本当に参加しますか？"}, class: 'btn btn-primary' %>
