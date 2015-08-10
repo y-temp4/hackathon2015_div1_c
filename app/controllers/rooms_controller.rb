@@ -1,11 +1,11 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    @rooms = Room.order(:id)
   end
 
   def show
     @room = Room.find(params[:id])
-    @user = User.find(@room.user_id)
+    @user = User.find(@room.user_id) if @room.user_id
   end
 
   def new
@@ -58,7 +58,6 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit( :amount, :price ,:message , :address)
+    params.require(:room).permit( :amount, :price ,:message , :address, :title, :image)
   end
-
 end
