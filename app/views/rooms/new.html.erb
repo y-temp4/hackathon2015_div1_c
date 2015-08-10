@@ -34,7 +34,7 @@
 
 <div class="form-group">
 	<%= room.label :date, "日付" %>
-	<%= room.datetime_select :date, :use_month_numbers => true, class: 'form-control' %>
+	<%= room.datetime_select :date, :use_month_numbers => true, :discard_hour => true, :discard_minute => true, class: 'form-control' %>
 	<em>部屋に来てほしい日付を入力してください</em>
 </div>
 

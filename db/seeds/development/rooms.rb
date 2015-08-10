@@ -10,6 +10,7 @@ address = %w(東京都 埼玉 神奈川 千葉 山梨)
                  message: messages[n%5],
                  address: address[n%5],
                  amount: n+2,
-                 price: 100*n
+                 price: 100*n,
+                 date: Time.current
                 )
 end
